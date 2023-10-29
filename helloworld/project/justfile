@@ -1,0 +1,11 @@
+set dotenv-load
+
+PRIVATE_KEY := env_var("PRIVATE_KEY")
+RPC_URL := env_var("RPC_URL")
+
+simulate:
+	forge script script/Challenge.s.sol --rpc-url {{RPC_URL}} -vvvvv
+solve:
+	forge script script/Challenge.s.sol --rpc-url {{RPC_URL}} --broadcast -vvvvv
+
+
